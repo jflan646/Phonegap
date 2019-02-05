@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<script src="cordova.js"></script>
+<style>
+    body{
+        background-color:black ; 
+    } 
+    #btn{
+        font-size:3em;
+    }
+</style>
+    
+<script>
+    var state = 'off';
+    window.onload = start;
+    function start(){
+        var button =document.getElementById('btn');
+        button.addEventListener('click',toggle,false);
+    }
+    function toggle()
+    {
+        if(state=='off')
+        {
+            state="on";
+            document.getElementById('bd').style.backgroundColor="white";
+            document.getElementById('btn').innerHTML="Off";
+        }
+        else{
+           state="off"; 
+              document.getElementById('bd').style.backgroundColor="black";
+             document.getElementById('btn').innerHTML="On";
+        }
+     
+    }
+    </script>    
+</head>
+    
+<body id='bd'>
+<div id='container'>
+    <button id='btn'>On</button>
+    </div>
+</body>
+</html>
